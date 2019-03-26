@@ -13,7 +13,7 @@ RUN apt-get update  \
     && mkdir /var/run/sshd \
 
 #install python
-RUN apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev liblapack-dev libblas-dev  wget  git  cmake  \
+RUN apt-get install build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev liblapack-dev libblas-dev  wget  git  cmake  \
     && wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz \
     && tar xf Python-3.7.2.tar.xz \
     && cd /root/Python-3.7.2 \
