@@ -23,10 +23,12 @@ RUN ./configure \
 
 #install pip packages
 RUN pip3.7 install --upgrade pip \
-    && sudo pip3.7 install wheel \
-    && sudo pip3.7 install scipy \
-    && sudo pip3.7 install pandas \
-    && sudo pip3.7 install plotly
+    && pip3.7 install wheel \
+    && pip3.7 install numpy
+    
+RUN pip3.7 install scipy
+RUN pip3.7 install pandas
+RUN pip3.7 install plotly
 
 #SSH port
 EXPOSE 22
