@@ -16,11 +16,17 @@ RUN apt-get update  \
 RUN apt-get install build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev liblapack-dev libblas-dev wget git cmake
 RUN wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz
 RUN tar xf Python-3.7.2.tar.xz
-    
 WORKDIR /Python-3.7.2
 RUN ./configure \
     && make -j "$(nproc)" \
     && make altinstall
+
+#install pip packages
+RUN pip3.7 install --upgrade pip /
+    && sudo pip3.7 install wheel /
+    && sudo pip3.7 install scipy /
+    && sudo pip3.7 install pandas /
+    && sudo pip3.7 install plotly
 
 #SSH port
 EXPOSE 22
