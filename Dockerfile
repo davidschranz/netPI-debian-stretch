@@ -22,10 +22,10 @@ RUN ./configure \
     && make altinstall
 
 #install pip packages
-RUN pip3.7 install --upgrade pip /
-    && sudo pip3.7 install wheel /
-    && sudo pip3.7 install scipy /
-    && sudo pip3.7 install pandas /
+RUN pip3.7 install --upgrade pip \
+    && sudo pip3.7 install wheel \
+    && sudo pip3.7 install scipy \
+    && sudo pip3.7 install pandas \
     && sudo pip3.7 install plotly
 
 #SSH port
