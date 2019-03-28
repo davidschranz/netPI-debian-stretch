@@ -1,5 +1,5 @@
 ```
-Not working; so far
+Not working
 
 Try to install
 python 3.7.2
